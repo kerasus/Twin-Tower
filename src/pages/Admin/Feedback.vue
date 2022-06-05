@@ -123,7 +123,27 @@ export default {
         { type: 'input', name: 'id', responseKey: 'id', label: 'شناسه', col: 'col-md-2', disable: true },
         { type: 'input', name: 'title', responseKey: 'title', label: 'عنوان', col: 'col-md-5' },
         { type: 'input', name: 'category', responseKey: 'category', label: 'دسته', col: 'col-md-5' },
-        { type: 'input-editor', name: 'description', responseKey: 'description', label: 'متن', col: 'col-md-12' }
+        {
+          type: 'tiptap-editor',
+          name: 'description',
+          responseKey: 'description',
+          label: 'متن',
+          options: {
+            bubbleMenu: false,
+            floatingMenu: false,
+            poem: false,
+            reading: false,
+            persianKeyboard: true,
+            mathliveOptions: { smartFence: false },
+            uploadServer: {
+              url: API_ADDRESS.media.upload,
+              instantUpload: true,
+              responseKey: 'file',
+              headers: { Authorization: 'Bearer ' + this.$store.getters['Auth/accessToken'] }
+            }
+          },
+          col: 'col-md-12'
+        }
       ],
       createInputs: [],
       editInputs: [],

@@ -34,8 +34,8 @@
             </q-tooltip>
           </q-btn>
         </template>
-        <template v-else-if="inputData.props.col.name === 'description'">
-          <div v-html="inputData.props.value" />
+        <template v-else-if="inputData.props.col.name === 'summary'">
+          <div v-html="inputData.props.row.summary" />
         </template>
         <template v-else>
           {{ inputData.props.value }}
@@ -61,12 +61,7 @@ export default {
       expanded: true,
       allProps: {
         config: {
-          api: {
-            show: API_ADDRESS.content.base,
-            edit: API_ADDRESS.content.base,
-            create: API_ADDRESS.content.base,
-            index: API_ADDRESS.content.base
-          },
+          api: API_ADDRESS.content.base,
           title: {
             show: 'اطلاعات محتوا',
             edit: 'اطلاعات محتوا',
