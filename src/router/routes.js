@@ -88,9 +88,14 @@ const routes = [
     ]
   },
   {
+    path: '/login/admin',
+    name: 'AdminLogin',
+    component: () => import('pages/Auth/AdminLogin.vue')
+  },
+  {
     path: '/login',
-    name: 'login',
-    component: () => import('pages/Auth/Login.vue')
+    name: 'Login',
+    component: () => import('pages/Auth/OTPLogin.vue')
   },
   // are u mr Esmaeili ? '' : dont touch this route
   // Always leave this as last one,

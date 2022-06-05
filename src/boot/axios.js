@@ -97,7 +97,7 @@ const AxiosHooks = (function () {
   function deAuthorizeUser (router, store) {
     store.dispatch('Auth/logOut')
 
-    const loginRouteName = 'login'
+    const loginRouteName = 'Login'
     if (router.history.current.name === loginRouteName) {
       return
     }
